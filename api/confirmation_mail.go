@@ -3,10 +3,10 @@ package api
 import (
 	"net/http"
 
-	"github.com/Marvin9/ignitus-mailing-microservice/mailer"
+	"github.com/Ignitus/ignitus-mailing-microservice/mailer"
 
-	"github.com/Marvin9/ignitus-mailing-microservice/structure"
-	"github.com/Marvin9/ignitus-mailing-microservice/utils"
+	"github.com/Ignitus/ignitus-mailing-microservice/structure"
+	"github.com/Ignitus/ignitus-mailing-microservice/utils"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,4 +1,4 @@
-module github.com/Marvin9/ignitus-mailing-microservice
+module github.com/Ignitus/ignitus-mailing-microservice
 
 go 1.14
 

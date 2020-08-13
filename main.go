@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/Marvin9/ignitus-mailing-microservice/api"
-	"github.com/Marvin9/ignitus-mailing-microservice/api/middleware"
+	"github.com/Ignitus/ignitus-mailing-microservice/api"
+	"github.com/Ignitus/ignitus-mailing-microservice/api/middleware"
 	"github.com/gin-gonic/gin"
 	_ "github.com/joho/godotenv/autoload"
 )

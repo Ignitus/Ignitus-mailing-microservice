@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 
-	"github.com/Marvin9/ignitus-mailing-microservice/structure"
+	"github.com/Ignitus/ignitus-mailing-microservice/structure"
 	"github.com/gin-gonic/gin"
 )
 

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/Marvin9/ignitus-mailing-microservice/utils"
+	"github.com/Ignitus/ignitus-mailing-microservice/utils"
 
 	"github.com/sendgrid/sendgrid-go"
 	"github.com/sendgrid/sendgrid-go/helpers/mail"
