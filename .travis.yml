@@ -1,4 +1,7 @@
 language: go
 
+before_script:
+  - go get -d ./...
+
 script:
   - make build
