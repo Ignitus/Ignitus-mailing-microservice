@@ -12,11 +12,11 @@ import (
 )
 
 var (
-	fromName  = "Ignitus Team"
+	fromName  = "Team Ignitus"
 	fromEmail = os.Getenv("FROM_EMAIL")
 )
 
-// Mail will mail to user through sendgrid
+/* Mail fn will rely on sendGrid server. */
 func Mail(to, subject, htmlMessage string) error {
 	utils.LogMessage(fmt.Sprintf("Sending mail to %v", to))
 
