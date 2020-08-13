@@ -9,7 +9,7 @@ import (
 	_ "github.com/joho/godotenv/autoload"
 )
 
-const acceptedHost = "ignitusrestapi.herokuapp.com"
+var acceptedHost = os.Getenv("ACCEPTED_HOST")
 
 func usePort() string {
 	port := os.Getenv("PORT")

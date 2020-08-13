@@ -11,9 +11,9 @@ import (
 	"github.com/sendgrid/sendgrid-go/helpers/mail"
 )
 
-const (
+var (
 	fromName  = "Ignitus Team"
-	fromEmail = "ignitus@hi.com"
+	fromEmail = os.Getenv("FROM_EMAIL")
 )
 
 // Mail will mail to user through sendgrid
