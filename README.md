@@ -1,4 +1,4 @@
-# Ignitus mailing microservice
+## Ignitus mailing microservice 🎯
 
 > Scalable mailing utility.
 
