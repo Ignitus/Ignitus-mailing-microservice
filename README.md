@@ -17,10 +17,11 @@
         <td>POST</td>
         <td>
             <code>
-            {
-                "to_email": string, <br/>
-                "verification_link": string, <br/>
-            }
+             {
+                "recipientAddress": string, <br/>
+                "verificationLink": string, <br/>
+                "recipientUserName": string
+             }
             </code>
         </td>
         <td>
