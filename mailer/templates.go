@@ -2,7 +2,12 @@ package mailer
 
 import "fmt"
 
-// GenerateConfirmationHTMLTemplate will generate confirmation html string to pass in Mail function
-func GenerateConfirmationHTMLTemplate(urlLink string) string {
-	return fmt.Sprintf("<h2>Please verify your email by visiting given url.</h2><br /><a href=\"%v\" target=\"__blank\">%v</a>", urlLink, urlLink)
+/* Responsible for generating content in Email Body */
+func GenerateTemplate(recipientAddress string, verificationLink string) string {
+	return fmt.Sprintf(`
+		<p>Hi! %v </p>
+		<p>Thanks for joining the community.</p>
+		<p>Welcome to Ignitus! To verify your email, click the following link: </p>
+		<a href=\"%v\" target=\"__blank\">%v</a>,`, recipientAddress, verificationLink, verificationLink,
+	)
 }

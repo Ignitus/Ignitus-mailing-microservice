@@ -24,7 +24,7 @@ func main() {
 
 	router.Use(middleware.APIAccessTo(acceptedHost))
 
-	router.POST("/mail/confirmation", api.ConfirmationMailAPI)
+	router.POST("/mail/confirmation", api.MailingAPI)
 
 	router.Run(usePort())
 }

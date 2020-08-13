@@ -10,7 +10,7 @@ import (
 
 /* Fucntion to send confirmation mail to user. */
 
-func ConfirmationMailAPI(c *gin.Context) {
+func MailingAPI(c *gin.Context) {
 	var userData structure.RequestBody
 	err := userData.BindBody(c)
 	if err != nil {
@@ -18,11 +18,12 @@ func ConfirmationMailAPI(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, structure.ErrorResponse("Invalid body."))
 		return
 	}
-	sendTo := userData.ToEmail 
-	emailLink := userData.VerificationLink
-	htmlBody := mailer.GenerateConfirmationHTMLTemplate(emailLink)
+	recipientAddress := userData.recipientAddress
+	recipientUserName := userData.recipientUserName
+	verificationLink := userData.verificationLink
+	template := mailer.GenerateTemplate(recipientAddress, verificationLink)
 
-	err = mailer.Mail(sendTo, mailer.ConfirmationMailSubject, htmlBody)
+	err = mailer.Mail(recipientAddress, recipientUserName, mailer.subject, template)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, structure.ErrorResponse("Email was not sent."))
 		return

@@ -12,22 +12,22 @@ import (
 )
 
 var (
-	fromName  = "Team Ignitus"
-	fromEmail = os.Getenv("FROM_EMAIL")
+	senderName  = "Team Ignitus"
+	senderEmail = os.Getenv("sender_EMAIL")
 )
 
 /* Mail fn will rely on sendGrid server. */
-func Mail(to, subject, htmlMessage string) error {
-	utils.LogMessage(fmt.Sprintf("Sending mail to %v", to))
+func Mail(recipientAddress, recipientUserName, subject, template string) error {
+	utils.LogMessage(fmt.Sprintf("Sending mail to %v", recipientAddress))
 
-	from := mail.NewEmail(fromName, fromEmail)
-	mailTo := mail.NewEmail("", to)
-	message := mail.NewSingleEmail(from, subject, mailTo, "Hi,\n", htmlMessage)
+	sender := mail.NewEmail(senderName, senderEmail)
+	recipient := mail.NewEmail(recipientUserName, recipientAddress)
+	message := mail.NewSingleEmail(sender, subject, recipient, "Hi,\n", template)
 	client := sendgrid.NewSendClient(os.Getenv("SENDGRID_API_KEY"))
 	response, err := client.Send(message)
 
 	if err != nil {
-		utils.LogError(fmt.Sprintf("Error sending mail to %v on subject %v", to, subject), err)
+		utils.LogError(fmt.Sprintf("Error sending mail to %v on subject %v", recipientAddress, subject), err)
 	}
 
 	if response.StatusCode != http.StatusAccepted {
