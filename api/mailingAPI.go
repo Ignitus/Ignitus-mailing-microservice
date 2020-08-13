@@ -18,12 +18,12 @@ func MailingAPI(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, structure.ErrorResponse("Invalid body."))
 		return
 	}
-	recipientAddress := userData.recipientAddress
-	recipientUserName := userData.recipientUserName
-	verificationLink := userData.verificationLink
-	template := mailer.GenerateTemplate(recipientAddress, verificationLink)
+	recipientAddress := userData.RecipientAddress
+	recipientUserName := userData.RecipientUserName
+	verificationLink := userData.VerificationLink
+	template := mailer.GenerateTemplate(recipientUserName, verificationLink)
 
-	err = mailer.Mail(recipientAddress, recipientUserName, mailer.subject, template)
+	err = mailer.Mail(recipientAddress, recipientUserName, mailer.Subject, template)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, structure.ErrorResponse("Email was not sent."))
 		return

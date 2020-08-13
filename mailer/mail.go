@@ -4,16 +4,14 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-
 	"github.com/Ignitus/ignitus-mailing-microservice/utils"
-
 	"github.com/sendgrid/sendgrid-go"
 	"github.com/sendgrid/sendgrid-go/helpers/mail"
 )
 
 var (
 	senderName  = "Team Ignitus"
-	senderEmail = os.Getenv("sender_EMAIL")
+	senderEmail = os.Getenv("SENDER_EMAIL")
 )
 
 /* Mail fn will rely on sendGrid server. */

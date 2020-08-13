@@ -1,4 +1,4 @@
 package mailer
 
 /* Email subject */
-const subject = "Verify your email address 🎯."
+const Subject = "Verify your email address 🎯."
