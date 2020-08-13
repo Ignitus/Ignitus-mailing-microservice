@@ -6,5 +6,6 @@ dev:
 build:
 	clear && go build
 
-run_prod: build
+run_prod:
+	go build
 	GIN_MODE=release ./ignitus-mailing-microservice
