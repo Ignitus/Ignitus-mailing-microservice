@@ -1,1 +1,1 @@
-web: make run_prod
+web: ignitus-mailing-microservice
