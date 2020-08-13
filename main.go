@@ -4,9 +4,12 @@ import (
 	"os"
 
 	"github.com/Marvin9/ignitus-mailing-microservice/api"
+	"github.com/Marvin9/ignitus-mailing-microservice/api/middleware"
 	"github.com/gin-gonic/gin"
 	_ "github.com/joho/godotenv/autoload"
 )
+
+const acceptedHost = "ignitusrestapi.herokuapp.com"
 
 func usePort() string {
 	port := os.Getenv("PORT")
@@ -18,6 +21,8 @@ func usePort() string {
 
 func main() {
 	router := gin.Default()
+
+	router.Use(middleware.APIAccessTo(acceptedHost))
 
 	router.POST("/mail/confirmation", api.ConfirmationMailAPI)
 
