@@ -16,20 +16,20 @@
         <td>/mail/confirmation</td>
         <td>POST</td>
         <td>
-            <pre>
+            <code>
             {
-                "to_email": string,
-                "verification_link": string,
+                "to_email": string, <br/>
+                "verification_link": string, <br/>
             }
-            </pre>
+            </code>
         </td>
         <td>
-            <pre>
+            <code>
             {
-                "error": bool,
-                "data": string,
+                "error": bool, <br/>
+                "data": string, <br/>
             }
-            </pre>
+            </code>
         </td>
         <td>
             Use it to send verification email to user.
@@ -37,3 +37,11 @@
         </td>
     </tr>
 </table>
+
+## .env
+
+```
+- SENDGRID_API_KEY
+- ACCEPTED_HOST - (set localhost:8000 for local environment)
+- FROM_EMAIL
+```
