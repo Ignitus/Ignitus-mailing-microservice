@@ -2,6 +2,7 @@ package mailer
 
 import (
 	"fmt"
+	"net/http"
 	"os"
 
 	"github.com/Marvin9/ignitus-mailing-microservice/utils"
@@ -29,7 +30,9 @@ func Mail(to, subject, htmlMessage string) error {
 		utils.LogError(fmt.Sprintf("Error sending mail to %v on subject %v", to, subject), err)
 	}
 
-	utils.LogMessage(fmt.Sprintf("Response: %v", response))
+	if response.StatusCode != http.StatusAccepted {
+		utils.LogMessage(fmt.Sprintf("Response: %v", response.Body))
+	}
 
 	return err
 }
