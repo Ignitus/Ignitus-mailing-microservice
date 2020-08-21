@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+
 	"github.com/Ignitus/ignitus-mailing-microservice/utils"
 	"github.com/sendgrid/sendgrid-go"
 	"github.com/sendgrid/sendgrid-go/helpers/mail"
@@ -14,7 +15,7 @@ var (
 	senderEmail = os.Getenv("SENDER_EMAIL")
 )
 
-/* Mail fn will rely on sendGrid server. */
+// Mail fn will rely on sendGrid server.
 func Mail(recipientAddress, recipientUserName, subject, template string) error {
 	utils.LogMessage(fmt.Sprintf("Sending mail to %v", recipientAddress))
 

@@ -1,4 +1,4 @@
 package mailer
 
-/* Email subject */
+// Subject - Email subject
 const Subject = "Verify your email address 🎯."

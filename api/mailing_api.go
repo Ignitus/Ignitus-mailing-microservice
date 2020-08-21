@@ -2,14 +2,14 @@ package api
 
 import (
 	"net/http"
+
 	"github.com/Ignitus/ignitus-mailing-microservice/mailer"
 	"github.com/Ignitus/ignitus-mailing-microservice/structure"
 	"github.com/Ignitus/ignitus-mailing-microservice/utils"
 	"github.com/gin-gonic/gin"
 )
 
-/* Fucntion to send confirmation mail to user. */
-
+// MailingAPI is endpoint to send confirmation mail to user.
 func MailingAPI(c *gin.Context) {
 	var userData structure.RequestBody
 	err := userData.BindBody(c)
